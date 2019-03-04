@@ -1,0 +1,20 @@
+//        SimpleDateFormat format = null;
+//        Calendar c = Calendar.getInstance();
+//        try {
+//            if (!StringUtils.isBlank(year) && StringUtils.isBlank(month) && StringUtils.isBlank(day)) {
+//                format  = new SimpleDateFormat("yyyy");
+//                c.setTime(format.parse(year));
+//            } else if (!StringUtils.isBlank(year) && !StringUtils.isBlank(month) && StringUtils.isBlank(day)) {
+//                format  = new SimpleDateFormat("yyyyMM");
+//                c.setTime(format.parse(year+month));
+//            } else if (!StringUtils.isBlank(year) && !StringUtils.isBlank(month) && !StringUtils.isBlank(day)) {
+//                format  = new SimpleDateFormat("yyyyMMdd");
+//                c.setTime(format.parse(year + month + day));
+//            }
+//
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        c.add(Calendar.YEAR, -1);
+//        String start = format.format(c.getTime());
+//        System.out.println("过去一年：" + start);
