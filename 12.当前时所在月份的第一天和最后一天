@@ -1,0 +1,32 @@
+ SimpleDateFormat format2=new SimpleDateFormat("yyyyMMdd");
+        Calendar c2 = Calendar.getInstance();
+        try {
+            c2.setTime(format2.parse(year+month+"01"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        c2.set(Calendar.DAY_OF_MONTH,1);//设置为1号,当前日期既为本月第一天
+        String monthStart = format2.format(c2.getTime());
+        System.out.println(monthStart);
+        Calendar ca = Calendar.getInstance();
+        try {
+            ca.setTime(format2.parse(year+month+"01"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));
+        String monthEnd = format2.format(ca.getTime());
+        System.out.println(monthEnd);
+
+        try {
+            Date parse = format2.parse("2019" + "02" + "28");
+
+            if(parse.getTime()<=(ca.getTime().getTime())&&parse.getTime()>=(c2.getTime().getTime())){
+
+                System.out.println("月度进展率");
+            }else{
+                System.out.println("月度达成率");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
